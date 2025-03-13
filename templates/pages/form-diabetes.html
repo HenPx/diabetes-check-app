@@ -2,36 +2,22 @@
 
 {% block content %}
 
-
-<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[calc(100vh-6rem)] mt-8">
-    <div class="flex items-center justify-between w-full">
-        <a href="{{url_for('home')}}" class="w-fit text-primary flex items-center space-x-2 hover:text-[#FFF5D2] hover:bg-[#7A0A28] hover:rounded-xl p-3">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" class="h-10" />
-            </svg>      
-            <p class="text-md">Back Home</p>
-        </a>
-        <img class="w-[80px]" src="static\images\logoApp.png" alt="applogo">
-    </div>
-
+<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[80%] mt-8">
     <h2 class="text-2xl font-bold justify-center mt-4">Please fill in the true information!</h2>
     <p class="text-primary" id="step-now">Step 1 of 3</p>
     <form action="{{ url_for('predictScore') }}" method="post" class="w-[80%] mt-8">
         <!-- STEP 1 -->
-        <div class="step space-y-6" id="step-1">
-            <div class="space-y-6 px-4">
-
-                <!-- AGE -->
-                <label for="age" class="flex border-2 border-white justify-between items-center cursor-pointer shadow-[0_5px_3px_rgba(0,0,0,0.08)] bg-white p-4 w-full rounded-xl focus-within:border-primary hover:focus-within:border-primary hover:focus-within:border-2 focus-within:border-2 hover:bg-[#F6F6F6] hover:border-[#F6F6F6] transition">
-                    <p class="font-bold text-primary">AGE</p>
-                    <input id="age" type="number" step="1" name="age" required
-                        class="font-bold ml-4 rounded px-3 py-1 w-24 focus:outline-none" />
+        <div class="step" id="step-1">
+            <div class="space-y-8 px-4 ">
+                <label class="text-primary flex justify-between items-center">
+                    <span class="font-bold">
+                        AGE:
+                    </span>
+                    <input type="number" step="1" name="age" class="p-3 pl-4 rounded-xl w-[87%] bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your age" required>
                 </label>
             
-                <div class="flex justify-between gap-4">
-                    <div class="text-primary mb-2 font-bold ml-4 mr-8">SEX</div>
-                    
-
+                <div class="flex justify-between ">
+                    <div class="text-primary mb-2 font-bold mr-8">SEX</div>
                     <!-- Male -->
                     <label class="cursor-pointer  rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
                         <input id="male" type="radio" name="gender" value="Male" class="hidden" required />
@@ -53,50 +39,90 @@
                 </div>
             </div>
         </div>
-        <div class="step" id="step-2">
-            <label class="block">Hypertension:
-                <select name="hypertension" class="border p-2 w-full rounded">
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+        <div class="hidden step space-y-8 px-4 mt-4" id="step-2">
+            <label class="flex justify-between items-center text-center">
+                <div class="flex items-center space-x-4 font-bold text-primary">
+                    <img src="static\images\hypertension.svg" alt="hypertension">
+                    <p>HYPERTENSION</p>
+                </div>
+                <select name="hypertension" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                    <option value="" disabled selected hidden>Select hypertension status</option>
+                    <option class="uppercase" value="0">No</option>
+                    <option class="uppercase" value="1">Yes</option>
                 </select>
             </label>
-            <label class="block">Heart Disease:
-                <select name="heart_disease" class="border p-2 w-full rounded">
-                    <option value="0">No</option>
-                    <option value="1">Yes</option>
+            <label class="flex justify-between items-center text-center">
+                <div class="flex items-center space-x-4 font-bold text-primary">
+                    <img src="static\images\heartdisease.svg" alt="heartdisease">
+                    <p>HEART DISEASE</p>
+                </div>
+                <select name="heart_disease" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                    <option value="" disabled selected hidden>Select heart disease status</option>
+                    <option class="uppercase" value="0">No</option>
+                    <option class="uppercase" value="1">Yes</option>
                 </select>
             </label>
-            <label class="block">Smoking History:
-                <select name="smoking_history" class="border p-2 w-full rounded">
-                    <option value="No Info">No Info</option>
-                    <option value="never">Never</option>
-                    <option value="former">Former</option>
-                    <option value="ever">Ever</option>
-                    <option value="current">Current</option>
-                    <option value="not current">Not Current</option>
+            <label class="flex justify-between items-center text-center">
+                <div class="flex items-center space-x-4 font-bold text-primary">
+                    <img src="static\images\smokinghistory.svg" alt="smokinghistory">
+                    <p>SMOKING HISTORY</p>
+                </div>
+                <select name="smoking_history" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                    <option value="" disabled selected hidden>Select hypertension status</option>
+                    <option class="uppercase" value="No Info">No Info</option>
+                    <option class="uppercase" value="never">Never</option>
+                    <option class="uppercase" value="former">Former</option>
+                    <option class="uppercase" value="ever">Ever</option>
+                    <option class="uppercase" value="current">Current</option>
+                    <option class="uppercase" value="not current">Not Current</option>
                 </select>
             </label>
         </div>
-        <div class="step" id="step-3">
-            <label class="block">BMI:
-                <input type="number" step="0.01" name="bmi" class="border p-2 w-full rounded" required>
+        <div class="step space-y-6 mt-4 hidden px-4"  id="step-3">
+            <label class="flex flex-col text-primary space-y-2">
+                <span class="font-bold">
+                    BMI:
+                </span>
+                <input type="number" step="0.01" name="bmi" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your BMI" required>
             </label>
-            <label class="block">HbA1c Level:
-                <input type="number" step="0.01" name="hba1c_level" class="border p-2 w-full rounded" required>
+            <label class="flex flex-col text-primary space-y-2">
+                <span class="font-bold">
+                    HbA1c Level:
+                </span>
+                <input type="number" step="0.01" name="hba1c_level" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your HbA1c Level" required>
             </label>
-            <label class="block">Blood Glucose Level:
-                <input type="number" name="blood_glucose_level" class="border p-2 w-full rounded" required>
+            <label class="flex flex-col text-primary space-y-2">
+                <span class="font-bold">
+                    Blood Glucose Level:
+                </span>
+                <input type="number" step="0.01" name="blood_glucose_level" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your Blood Glucose Level" required>
             </label>
         </div>
         <!-- Buttons -->
         <div class="flex justify-between mt-4 sticky bottom-0">
-            <button type="button" id="prevBtn" class="bg-gray-300 text-black px-4 py-2 rounded" disabled>Prev</button>
-            <button type="button" id="nextBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+            <button type="button" id="prevBtn" class="text-primary hover:underline flex items-center space-x-2" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+                <p>Back</p>
+            </button>
+            <button type="button" id="nextBtn" class="rounded-xl bg-primary text-white p-2 px-4 hover:bg-[#57052B] flex items-center space-x-2">
+                <p>Next</p>          
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
+            <button type="submit" id="submitBtnContainer" class="rounded-xl bg-[#40BF24] text-white p-2 px-4 hover:bg-[#0B6E10] flex items-center space-x-2">
+                <p>Check Now!</p>          
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+            </button>
         </div>
         <!-- Submit only on last step -->
-        <div class="mt-4 hidden" id="submitBtnContainer">
-            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full">Submit</button>
-        </div>
+        <!-- <div class="mt-4 hidden" id="submitBtnContainer">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded ">Check Now!</button>
+        </div> -->
     </form>
 </div>
 
@@ -105,25 +131,54 @@
     const nextBtn = document.getElementById("nextBtn");
     const prevBtn = document.getElementById("prevBtn");
     const submitBtn = document.getElementById("submitBtnContainer");
+    const stepNow = document.getElementById("step-now");
 
     let currentStep = 0;
 
+    // Tampilkan step berdasarkan indeks
     function showStep(index) {
         steps.forEach((step, i) => {
             step.classList.toggle("hidden", i !== index);
         });
+
         prevBtn.disabled = index === 0;
         nextBtn.classList.toggle("hidden", index === steps.length - 1);
         submitBtn.classList.toggle("hidden", index !== steps.length - 1);
+
+        // Update teks step
+        stepNow.textContent = `Step ${index + 1} of ${steps.length}`;
     }
 
+    // Validasi input di step saat ini
+    function validateStep(index) {
+        const currentInputs = steps[index].querySelectorAll("input, select");
+        for (const input of currentInputs) {
+            if (input.type === "radio") {
+                // Kalau radio, minimal satu yang sama name-nya harus dicek
+                const name = input.name;
+                const radios = steps[index].querySelectorAll(`input[name="${name}"]`);
+                if (![...radios].some(r => r.checked)) return false;
+            } else if (!input.value) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Next button
     nextBtn.addEventListener("click", () => {
+        if (!validateStep(currentStep)) {
+            alert("Please fill in all required fields before proceeding.");
+            return;
+        }
+
         if (currentStep < steps.length - 1) {
             currentStep++;
             showStep(currentStep);
         }
     });
 
+    // Previous button
     prevBtn.addEventListener("click", () => {
         if (currentStep > 0) {
             currentStep--;
@@ -131,7 +186,7 @@
         }
     });
 
-    // Inisialisasi
+    // Inisialisasi pertama kali
     showStep(currentStep);
 </script>
 

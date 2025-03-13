@@ -54,7 +54,8 @@ def predictScore():
         prediction = model.predict(input_data)
         # accuracy = accuracy_score(prediction)
         result = "Diabetes Detected" if prediction[0] == 1 else "No Diabetes"
-        return render_template('pages/predict-diabetes.html', result=result)
+        score = 35
+        return render_template('pages/predict-diabetes.html', result=result, score=score)
     except Exception as e:
         return f"Error: {str(e)}"
 
