@@ -2,60 +2,138 @@
 
 {% block content %}
 
-<a href="{{url_for('home')}}" class="w-fit text-[#7A0A28] flex items-center space-x-2 hover:text-[#FFF5D2] hover:bg-[#7A0A28] hover:rounded-xl p-3">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" class="h-10" />
-    </svg>      
-    <p class="text-lg">Back Home</p>
-</a>
 
-<div class="flex flex-col items-center mx-auto w-full p-6 bg-[#FFFCED] rounded-xl">
-    <h2 class="text-xl font-bold justify-center mb-4">Form Prediksi Diabetes</h2>
-    <form action="{{ url_for('predictScore') }}" method="post" class="space-y-4 w-full">
-        <label class="block">Gender:
-            <select name="gender" class="border p-2 w-full rounded">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-            </select>
-        </label>
-        <label class="block">Age:
-            <input type="number" step="0.01" name="age" class="border p-2 w-full rounded" required>
-        </label>
-        <label class="block">Hypertension:
-            <select name="hypertension" class="border p-2 w-full rounded">
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-            </select>
-        </label>
-        <label class="block">Heart Disease:
-            <select name="heart_disease" class="border p-2 w-full rounded">
-                <option value="0">No</option>
-                <option value="1">Yes</option>
-            </select>
-        </label>
-        <label class="block">Smoking History:
-            <select name="smoking_history" class="border p-2 w-full rounded">
-                <option value="No Info">No Info</option>
-                <option value="never">Never</option>
-                <option value="former">Former</option>
-                <option value="ever">Ever</option>
-                <option value="current">Current</option>
-                <option value="not current">Not Current</option>
-            </select>
-        </label>
-        <label class="block">BMI:
-            <input type="number" step="0.01" name="bmi" class="border p-2 w-full rounded" required>
-        </label>
-        <label class="block">HbA1c Level:
-            <input type="number" step="0.01" name="hba1c_level" class="border p-2 w-full rounded" required>
-        </label>
-        <label class="block">Blood Glucose Level:
-            <input type="number" name="blood_glucose_level" class="border p-2 w-full rounded" required>
-        </label>
-        <button type="submit" class="border border-[#7A0A28] text-[#7A0A28] px-4 py-2 rounded w-full hover:bg-[#7A0A28] hover:text-[#FFF5D2]">Prediksi</button>
+<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[calc(100vh-6rem)] mt-8">
+    <div class="flex items-center justify-between w-full">
+        <a href="{{url_for('home')}}" class="w-fit text-primary flex items-center space-x-2 hover:text-[#FFF5D2] hover:bg-[#7A0A28] hover:rounded-xl p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" class="h-10" />
+            </svg>      
+            <p class="text-md">Back Home</p>
+        </a>
+        <img class="w-[80px]" src="static\images\logoApp.png" alt="applogo">
+    </div>
+
+    <h2 class="text-2xl font-bold justify-center mt-4">Please fill in the true information!</h2>
+    <p class="text-primary" id="step-now">Step 1 of 3</p>
+    <form action="{{ url_for('predictScore') }}" method="post" class="w-[80%] mt-8">
+        <!-- STEP 1 -->
+        <div class="step space-y-6" id="step-1">
+            <div class="space-y-6 px-4">
+
+                <!-- AGE -->
+                <label for="age" class="flex border-2 border-white justify-between items-center cursor-pointer shadow-[0_5px_3px_rgba(0,0,0,0.08)] bg-white p-4 w-full rounded-xl focus-within:border-primary hover:focus-within:border-primary hover:focus-within:border-2 focus-within:border-2 hover:bg-[#F6F6F6] hover:border-[#F6F6F6] transition">
+                    <p class="font-bold text-primary">AGE</p>
+                    <input id="age" type="number" step="1" name="age" required
+                        class="font-bold ml-4 rounded px-3 py-1 w-24 focus:outline-none" />
+                </label>
+            
+                <div class="flex justify-between gap-4">
+                    <div class="text-primary mb-2 font-bold ml-4 mr-8">SEX</div>
+                    
+
+                    <!-- Male -->
+                    <label class="cursor-pointer  rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                        <input id="male" type="radio" name="gender" value="Male" class="hidden" required />
+                        <img src="{{ url_for('static', filename='images/male.png') }}" alt="Male" />
+                        <p class="font-bold">MALE</p>
+                    </label>
+                    <!-- Female -->
+                    <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                        <input id="female" type="radio" name="gender" value="Female" class="hidden" required />
+                        <img src="{{ url_for('static', filename='images/female.png') }}" alt="Female" />
+                        <p class="font-bold">FEMALE</p>
+                    </label>
+                    <!-- Other -->
+                    <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                        <input id="other" type="radio" name="gender" value="Other" class="hidden" required />
+                        <p class="font-bold">OTHER</p>
+                    </label>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="step" id="step-2">
+            <label class="block">Hypertension:
+                <select name="hypertension" class="border p-2 w-full rounded">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </label>
+            <label class="block">Heart Disease:
+                <select name="heart_disease" class="border p-2 w-full rounded">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </label>
+            <label class="block">Smoking History:
+                <select name="smoking_history" class="border p-2 w-full rounded">
+                    <option value="No Info">No Info</option>
+                    <option value="never">Never</option>
+                    <option value="former">Former</option>
+                    <option value="ever">Ever</option>
+                    <option value="current">Current</option>
+                    <option value="not current">Not Current</option>
+                </select>
+            </label>
+        </div>
+        <div class="step" id="step-3">
+            <label class="block">BMI:
+                <input type="number" step="0.01" name="bmi" class="border p-2 w-full rounded" required>
+            </label>
+            <label class="block">HbA1c Level:
+                <input type="number" step="0.01" name="hba1c_level" class="border p-2 w-full rounded" required>
+            </label>
+            <label class="block">Blood Glucose Level:
+                <input type="number" name="blood_glucose_level" class="border p-2 w-full rounded" required>
+            </label>
+        </div>
+        <!-- Buttons -->
+        <div class="flex justify-between mt-4 sticky bottom-0">
+            <button type="button" id="prevBtn" class="bg-gray-300 text-black px-4 py-2 rounded" disabled>Prev</button>
+            <button type="button" id="nextBtn" class="bg-blue-500 text-white px-4 py-2 rounded">Next</button>
+        </div>
+        <!-- Submit only on last step -->
+        <div class="mt-4 hidden" id="submitBtnContainer">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full">Submit</button>
+        </div>
     </form>
 </div>
+
+<script>
+    const steps = document.querySelectorAll(".step");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const submitBtn = document.getElementById("submitBtnContainer");
+
+    let currentStep = 0;
+
+    function showStep(index) {
+        steps.forEach((step, i) => {
+            step.classList.toggle("hidden", i !== index);
+        });
+        prevBtn.disabled = index === 0;
+        nextBtn.classList.toggle("hidden", index === steps.length - 1);
+        submitBtn.classList.toggle("hidden", index !== steps.length - 1);
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+            showStep(currentStep);
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+            currentStep--;
+            showStep(currentStep);
+        }
+    });
+
+    // Inisialisasi
+    showStep(currentStep);
+</script>
 
 
 {% endblock %}

@@ -3,7 +3,6 @@
 /* npx @tailwindcss/cli -i ./static/css/input.css -o ./static/css/output.css --watch */
 
 @theme {
-    --color-primary-500 : #FFF5D2
-
+    --color-primary : #7A0A28;
 
 }
