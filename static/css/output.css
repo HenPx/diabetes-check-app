@@ -6,12 +6,10 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(0.637 0.237 25.331);
     --color-green-500: oklch(0.723 0.219 149.579);
-    --color-gray-100: oklch(0.967 0.003 264.542);
     --color-gray-300: oklch(0.872 0.01 258.338);
     --color-gray-400: oklch(0.707 0.022 261.325);
-    --color-neutral-100: #8A8585,;
+    --color-neutral-100: #8A8585;
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -218,9 +216,6 @@
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
-  .z-20 {
-    z-index: 20;
-  }
   .container {
     width: 100%;
     @media (width >= 40rem) {
@@ -244,6 +239,9 @@
   }
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
+  }
+  .mt-10 {
+    margin-top: calc(var(--spacing) * 10);
   }
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
@@ -288,6 +286,14 @@
     width: calc(var(--spacing) * 6);
     height: calc(var(--spacing) * 6);
   }
+  .size-50 {
+    width: calc(var(--spacing) * 50);
+    height: calc(var(--spacing) * 50);
+  }
+  .size-55 {
+    width: calc(var(--spacing) * 55);
+    height: calc(var(--spacing) * 55);
+  }
   .size-60 {
     width: calc(var(--spacing) * 60);
     height: calc(var(--spacing) * 60);
@@ -316,6 +322,15 @@
   }
   .w-\[30\%\] {
     width: 30%;
+  }
+  .w-\[40\%\] {
+    width: 40%;
+  }
+  .w-\[40\] {
+    width: 40;
+  }
+  .w-\[50\%\] {
+    width: 50%;
   }
   .w-\[60\%\] {
     width: 60%;
@@ -613,17 +628,6 @@
       font-style: italic;
     }
   }
-  .required\:border {
-    &:required {
-      border-style: var(--tw-border-style);
-      border-width: 1px;
-    }
-  }
-  .required\:border-red-500 {
-    &:required {
-      border-color: var(--color-red-500);
-    }
-  }
   .hover\:rounded-xl {
     &:hover {
       @media (hover: hover) {
@@ -671,24 +675,9 @@
       outline-color: var(--color-primary);
     }
   }
-  .disabled\:bg-gray-100 {
-    &:disabled {
-      background-color: var(--color-gray-100);
-    }
-  }
   .disabled\:bg-gray-400 {
     &:disabled {
       background-color: var(--color-gray-400);
-    }
-  }
-  .disabled\:bg-neutral-100 {
-    &:disabled {
-      background-color: var(--color-neutral-100);
-    }
-  }
-  .disabled\:bg-primary {
-    &:disabled {
-      background-color: var(--color-primary);
     }
   }
   .has-checked\:bg-primary {
