@@ -19,13 +19,17 @@ smoking_mapping = {
 gender_mapping = {
     "Male": 0,
     "Female": 1,
-    "Other": 2
+    "Other": 1
 }
 
 
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/coba')
+def coba():
+    return render_template('pages/dumb.html')
 
 
 @app.route('/predict-form')

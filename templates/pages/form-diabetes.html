@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[90%] md:min-h-[80%] mt-8 relative">
+<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[80%] md:min-h-[80%] mt-8  relative">
     <h2 class="text-2xl md:text-3xl font-bold justify-center mt-4 text-center">Please fill in the true information!</h2>
     <p class="text-primary" id="step-now">Step 1 of 3</p>
     <form action="{{ url_for('predictScore') }}" method="post" class="w-full lg:w-[80%] mt-8">
@@ -45,34 +45,34 @@
             </div>
         </div>
         <div class="hidden step space-y-8 px-4 mt-4" id="step-2">
-            <label class="flex justify-between items-center text-center">
+            <label class="flex flex-col md:flex-row space-y-4  justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\hypertension.svg" alt="hypertension">
                     <p class="text-xl">HYPERTENSION</p>
                 </div>
-                <select name="hypertension" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
+                <select name="hypertension" class="md:w-[60%] w-fit uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-md md:text-xl">
                     <option value="" disabled selected hidden>Select hypertension status</option>
                     <option class="uppercase" value="0">No</option>
                     <option class="uppercase" value="1">Yes</option>
                 </select>
             </label>
-            <label class="flex justify-between items-center text-center">
+            <label class="flex flex-col md:flex-row space-y-4  justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\heartdisease.svg" alt="heartdisease">
                     <p class="text-xl">HEART DISEASE</p>
                 </div>
-                <select name="heart_disease" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
+                <select name="heart_disease" class="md:w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-md md:text-xl">
                     <option value="" disabled selected hidden>Select heart disease status</option>
                     <option class="uppercase" value="0">No</option>
                     <option class="uppercase" value="1">Yes</option>
                 </select>
             </label>
-            <label class="flex justify-between items-center text-center">
+            <label class="flex flex-col md:flex-row space-y-4  justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\smokinghistory.svg" alt="smokinghistory">
                     <p class="text-xl">SMOKING HISTORY</p>
                 </div>
-                <select name="smoking_history" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
+                <select name="smoking_history" class="md:w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-md md:text-xl">
                     <option value="" disabled selected hidden>Select hypertension status</option>
                     <option class="uppercase" value="No Info">No Info</option>
                     <option class="uppercase" value="never">Never</option>
@@ -83,7 +83,7 @@
                 </select>
             </label>
         </div>
-        <div class="step space-y-6 mt-4 hidden px-4"  id="step-3">
+        <div class="step space-y-6 mt-4 hidden px-4 mb-16 md:mb-0"  id="step-3">
             <label class="flex flex-col text-primary space-y-2">
                 <span class="font-bold text-xl">
                     BMI:
