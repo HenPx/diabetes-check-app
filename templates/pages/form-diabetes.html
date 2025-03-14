@@ -2,38 +2,38 @@
 
 {% block content %}
 
-<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[80%] mt-8">
-    <h2 class="text-2xl font-bold justify-center mt-4">Please fill in the true information!</h2>
+<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[80%] mt-8 relative">
+    <h2 class="text-3xl font-bold justify-center mt-4">Please fill in the true information!</h2>
     <p class="text-primary" id="step-now">Step 1 of 3</p>
     <form action="{{ url_for('predictScore') }}" method="post" class="w-[80%] mt-8">
         <!-- STEP 1 -->
         <div class="step" id="step-1">
             <div class="space-y-8 px-4 ">
                 <label class="text-primary flex justify-between items-center">
-                    <span class="font-bold">
+                    <span class="font-bold text-xl">
                         AGE:
                     </span>
-                    <input type="number" step="1" name="age" class="p-3 pl-4 rounded-xl w-[87%] bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your age" required>
+                    <input type="number" step="1" name="age" class="p-3 text-xl pl-4 rounded-xl w-[87%] bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your age" required>
                 </label>
             
                 <div class="flex justify-between ">
-                    <div class="text-primary mb-2 font-bold mr-8">SEX</div>
+                    <div class="text-primary mb-2 font-bold mr-8 text-xl">SEX</div>
                     <!-- Male -->
                     <label class="cursor-pointer  rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
                         <input id="male" type="radio" name="gender" value="Male" class="hidden" required />
                         <img src="{{ url_for('static', filename='images/male.png') }}" alt="Male" />
-                        <p class="font-bold">MALE</p>
+                        <p class="font-bold text-xl">MALE</p>
                     </label>
                     <!-- Female -->
                     <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
                         <input id="female" type="radio" name="gender" value="Female" class="hidden" required />
                         <img src="{{ url_for('static', filename='images/female.png') }}" alt="Female" />
-                        <p class="font-bold">FEMALE</p>
+                        <p class="font-bold text-xl">FEMALE</p>
                     </label>
                     <!-- Other -->
                     <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
                         <input id="other" type="radio" name="gender" value="Other" class="hidden" required />
-                        <p class="font-bold">OTHER</p>
+                        <p class="font-bold text-xl">OTHER</p>
                     </label>
                     
                 </div>
@@ -43,9 +43,9 @@
             <label class="flex justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\hypertension.svg" alt="hypertension">
-                    <p>HYPERTENSION</p>
+                    <p class="text-xl">HYPERTENSION</p>
                 </div>
-                <select name="hypertension" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                <select name="hypertension" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
                     <option value="" disabled selected hidden>Select hypertension status</option>
                     <option class="uppercase" value="0">No</option>
                     <option class="uppercase" value="1">Yes</option>
@@ -54,9 +54,9 @@
             <label class="flex justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\heartdisease.svg" alt="heartdisease">
-                    <p>HEART DISEASE</p>
+                    <p class="text-xl">HEART DISEASE</p>
                 </div>
-                <select name="heart_disease" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                <select name="heart_disease" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
                     <option value="" disabled selected hidden>Select heart disease status</option>
                     <option class="uppercase" value="0">No</option>
                     <option class="uppercase" value="1">Yes</option>
@@ -65,9 +65,9 @@
             <label class="flex justify-between items-center text-center">
                 <div class="flex items-center space-x-4 font-bold text-primary">
                     <img src="static\images\smokinghistory.svg" alt="smokinghistory">
-                    <p>SMOKING HISTORY</p>
+                    <p class="text-xl">SMOKING HISTORY</p>
                 </div>
-                <select name="smoking_history" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center">
+                <select name="smoking_history" class="w-[60%] uppercase p-3 pl-4 pr-4 rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] font-bold apperance-none text-center text-xl">
                     <option value="" disabled selected hidden>Select hypertension status</option>
                     <option class="uppercase" value="No Info">No Info</option>
                     <option class="uppercase" value="never">Never</option>
@@ -80,44 +80,46 @@
         </div>
         <div class="step space-y-6 mt-4 hidden px-4"  id="step-3">
             <label class="flex flex-col text-primary space-y-2">
-                <span class="font-bold">
+                <span class="font-bold text-xl">
                     BMI:
                 </span>
-                <input type="number" step="0.01" name="bmi" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your BMI" required>
+                <input type="number" step="0.01" name="bmi" class="p-3 pl-4 text-xl w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your BMI" required>
             </label>
             <label class="flex flex-col text-primary space-y-2">
-                <span class="font-bold">
+                <span class="font-bold text-xl">
                     HbA1c Level:
                 </span>
-                <input type="number" step="0.01" name="hba1c_level" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your HbA1c Level" required>
+                <input type="number" step="0.01" name="hba1c_level" class="p-3 pl-4 text-xl w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic " placeholder="Input your HbA1c Level" required>
             </label>
             <label class="flex flex-col text-primary space-y-2">
-                <span class="font-bold">
+                <span class="font-bold text-xl">
                     Blood Glucose Level:
                 </span>
-                <input type="number" step="0.01" name="blood_glucose_level" class="p-3 pl-4 w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your Blood Glucose Level" required>
+                <input type="number" step="0.01" name="blood_glucose_level" class="p-3 pl-4 text-xl w-full rounded-xl bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your Blood Glucose Level" required>
             </label>
         </div>
         <!-- Buttons -->
-        <div class="flex justify-between mt-4 sticky bottom-0">
-            <button type="button" id="prevBtn" class="text-primary hover:underline flex items-center space-x-2" disabled>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-                </svg>
-                <p>Back</p>
-            </button>
-            <button type="button" id="nextBtn" class="rounded-xl bg-primary text-white p-2 px-4 hover:bg-[#57052B] flex items-center space-x-2">
-                <p>Next</p>          
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-            </button>
-            <button type="submit" id="submitBtnContainer" class="rounded-xl bg-[#40BF24] text-white p-2 px-4 hover:bg-[#0B6E10] flex items-center space-x-2">
-                <p>Check Now!</p>          
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-            </button>
+        <div class="absolute bottom-0 inset-x-0 p-6 px-8">
+            <div class="flex justify-between mt-4">
+                <button type="button" id="prevBtn" class="text-primary hover:underline flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                    </svg>
+                    <p>Back</p>
+                </button>
+                <button type="button" id="nextBtn" class="rounded-xl bg-primary text-white p-2 px-4 hover:bg-[#57052B] flex items-center space-x-2">
+                    <p>Next</p>          
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+                <button type="submit" id="submitBtnContainer" class="rounded-xl bg-[#40BF24] text-white p-2 px-4 hover:bg-[#0B6E10] flex items-center space-x-2 disabled:bg-gray-400" disabled>
+                    <p>Check Now!</p>          
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                </button>
+            </div>
         </div>
         <!-- Submit only on last step -->
         <!-- <div class="mt-4 hidden" id="submitBtnContainer">
@@ -141,7 +143,11 @@
             step.classList.toggle("hidden", i !== index);
         });
 
-        prevBtn.disabled = index === 0;
+        if (index === 0) {
+            prevBtn.classList.add("invisible");
+        } else {
+            prevBtn.classList.remove("invisible");
+        }
         nextBtn.classList.toggle("hidden", index === steps.length - 1);
         submitBtn.classList.toggle("hidden", index !== steps.length - 1);
 
@@ -153,7 +159,7 @@
     function validateStep(index) {
         const currentInputs = steps[index].querySelectorAll("input, select");
         for (const input of currentInputs) {
-            if (input.type === "radio") {
+            if (input.type === "radio" ) {
                 // Kalau radio, minimal satu yang sama name-nya harus dicek
                 const name = input.name;
                 const radios = steps[index].querySelectorAll(`input[name="${name}"]`);
@@ -161,14 +167,26 @@
             } else if (!input.value) {
                 return false;
             }
-        }
+        } 
         return true;
     }
 
     // Next button
     nextBtn.addEventListener("click", () => {
         if (!validateStep(currentStep)) {
-            alert("Please fill in all required fields before proceeding.");
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops!',
+                text: 'Please complete all required fields before continuing.',
+                confirmButtonColor: '#7A0A28',
+                background: '#FFFCED',
+                position: 'center',
+                customClass: {
+                    popup: ' shadow-lg swal2-border-radius',
+                    container: 'swal2-no-padding'
+                }
+            });
+            document.body.classList.remove('swal2-height-auto');
             return;
         }
 
@@ -185,6 +203,20 @@
             showStep(currentStep);
         }
     });
+
+    function validateFinalStep() {
+        const finalStepInputs = document.querySelectorAll("#step-3 input");
+        const isComplete = [...finalStepInputs].every(input => input.value.trim() !== "");
+        submitBtn.disabled = !isComplete;
+    }
+
+    // Tambahkan event listener untuk setiap input pada step-3
+    document.querySelectorAll("#step-3 input").forEach(input => {
+        input.addEventListener("input", validateFinalStep);
+    });
+
+    // Panggil fungsi untuk mengecek status awal saat halaman dimuat
+    validateFinalStep();
 
     // Inisialisasi pertama kali
     showStep(currentStep);

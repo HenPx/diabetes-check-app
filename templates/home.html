@@ -14,26 +14,26 @@
             <div class="flex mt-4 space-x-2 items-center">
                 <!-- <img src="" alt=""> -->
                 <img src="static\images\logoApp.png" alt="appLogo">
-                <p class="font-bold text-3xl text-[#7A0A28]">DiaCheck</p>
+                <p class="font-bold text-4xl text-[#7A0A28]">DiaCheck</p>
             </div>
             <div class="flex items-center mt-16 justify-between">
                 <div class="space-y-6">
-                    <h1 class="font-bold text-4xl md:text-7xl text-[#7A0A28]">
+                    <h1 class="font-bold text-4xl md:text-8xl text-[#7A0A28]">
                         Diabetes, <br />
                         <span class="text-black">Screening</span>
                     </h1>
-                    <p class="text-neutral-100 text-lg">Find out your risk of diabetes in just a few minutes! Answer simple questions and get instant results.</p>
-                    <a href="{{url_for('predictForm')}}" class="border p-3 rounded-xl border-[#7A0A28] text-[#7A0A28] hover:bg-[#7A0A28] hover:text-[#FFF5D2]">Get Started</a>
+                    <p class="text-neutral-100 text-3xl">Find out your risk of diabetes in just a few minutes! Answer simple questions and get instant results.</p>
+                    <a href="{{url_for('predictForm')}}" class="text-xl border p-3 rounded-xl border-[#7A0A28] text-[#7A0A28] hover:bg-[#7A0A28] hover:text-[#FFF5D2]">Get Started</a>
                 </div>
                 <img class="w-[600px]" src="static\images\homepict.svg" alt="home_pict">
             </div>
         </section>
 
-        <section>
-            <h4 class="font-bold text-primary text-2xl">FEATURES WE PROVIDE</h4>
+        <section class="mt-16">
+            <h4 class="font-bold text-primary text-4xl mb-8">FEATURES WE PROVIDE</h4>
             <div class="flex items-center space-x-8">
-                <div class="space-y-4">
-                    <h2 class="font-bold text-3xl md:text-5xl">Simple Health
+                <div class="space-y-8">
+                    <h2 class="font-bold text-3xl md:text-7xl">Simple Health
                         <span class="flex gap-4">
                             Questionnaire
                             <svg xmlns="http://www.w3.org/2000/svg" width="61" height="61" fill="none" viewBox="0 0 61 61">
@@ -49,47 +49,47 @@
                             </svg>
                         </span>
                     </h2>
-                    <p class="text-neutral-100 text-lg">We calculate your diabetes risk based on your answers.</p>
+                    <p class="text-neutral-100 text-3xl">We calculate your diabetes risk based on your answers.</p>
                 </div>
-                <div class="ml-16">
+                <div class="ml-16 flex flex-col items-start space-y-4">
                     <img src="static\images\foodanim.svg" alt="">
-                    <h3 class="text-lg">Food Recomendation</h3>
-                    <p class="text-neutral-100 text-lg">We provide healthy food recommendations to help prevent diabetes.</p>
+                    <h3 class="text-3xl">Food Recomendation</h3>
+                    <p class="text-neutral-100 text-3xl">We provide healthy food recommendations to help prevent diabetes.</p>
                 </div>
             </div>
         </section>
-        <section class="mt-16">
-            <h4 class="font-bold text-primary text-2xl">HELP TOPICS</h4>
-            <h2 class="font-bold text-5xl">Enhance Your Lifestyle</h2>
-            <div class="flex items-center gap-16 mt-8">
+        <section class="mt-[200px]">
+            <h4 class="font-bold text-primary text-4xl">HELP TOPICS</h4>
+            <h2 class="font-bold text-7xl">Enhance Your Lifestyle</h2>
+            <div class="grid grid-cols-4 gap-8 justify-center mt-8">
                 <div>
                     <img src="static\images\peanuthome.png" alt="peanut.png">
-                    <h3 class="font-bold text-xl">Healthy Fats</h3>
-                    <p class="text-neutral-100 text-xl">Supports heart health.</p>
+                    <h3 class="font-bold text-3xl">Healthy Fats</h3>
+                    <p class="text-neutral-100 text-3xl">Supports heart health.</p>
                 </div>
                 <div>
                     <img src="static\images\veggiehome.png" alt="veggie.png">
-                    <h3 class="font-bold text-xl">High-Fiber Foods</h3>
-                    <p class="text-neutral-100 text-xl">Helps control glucose levels.</p>
+                    <h3 class="font-bold text-3xl">High-Fiber Foods</h3>
+                    <p class="text-neutral-100 text-3xl">Helps control glucose levels.</p>
                 </div>
                 <div>
                     <img src="static\images\flourhome.png" alt="flour.png">
-                    <h3 class="font-bold text-xl">Lean Protein</h3>
-                    <p class="text-neutral-100 text-xl">Stabilizes energy levels.</p>
+                    <h3 class="font-bold text-3xl">Lean Protein</h3>
+                    <p class="text-neutral-100 text-3xl">Stabilizes energy levels.</p>
                 </div>
                 <div>
                     <img src="static\images\gingerhome.png" alt="ginger.png">
-                    <h3 class="font-bold text-xl">Anti-Inflammatory</h3>
-                    <p class="text-neutral-100 text-xl">Reduces inflammation.</p>
+                    <h3 class="font-bold text-3xl">Anti-Inflammatory</h3>
+                    <p class="text-neutral-100 text-3xl">Reduces inflammation.</p>
                 </div>
             </div>
         </section>
     </main>
     <footer class="bg-[#DBCB99] rounded-t-xl w-full px-6 md:py-4  lg:px-16  space-y-8 mt-16">
-        <div class="flex justify-between items-center w-full">
+        <div class="flex justify-between items-center w-full pt-8">
             <div>
                 <img src="static\images\logoApp.png" alt="appLogo">
-                <h4 class="font-bold text-2xl text-primary">DiaCheck</h4>
+                <h4 class="font-bold text-4xl text-primary">DiaCheck</h4>
             </div>
             <div class="flex flex-col space-y-4">
                 <p class="font-bold text-xl">Contact Us</p>
@@ -98,30 +98,30 @@
                         <path stroke="#7A0A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.679" d="M22.181 7.874v9.997a2.5 2.5 0 0 1-2.499 2.499H4.687a2.5 2.5 0 0 1-2.5-2.5V7.874"/>
                         <path stroke="#7A0A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.679" d="M22.181 7.873a2.5 2.5 0 0 0-2.499-2.499H4.687a2.5 2.5 0 0 0-2.5 2.5l8.673 5.414a2.5 2.5 0 0 0 2.649 0l8.672-5.415Z"/>
                     </svg>
-                    <p class="text-neutral-100">contact@company.com</p>
+                    <p class="text-neutral-100 text-xl">contact@company.com</p>
                 </div>
                 <div class="flex space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" viewBox="0 0 23 23">
                         <path stroke="#7A0A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.679" d="m13.886 20.976.01.008a4.917 4.917 0 0 0 6.12-.672l.687-.688a1.638 1.638 0 0 0 0-2.318l-2.899-2.897a1.64 1.64 0 0 0-2.319 0 1.639 1.639 0 0 1-2.317 0L8.532 9.772a1.64 1.64 0 0 1 0-2.317 1.64 1.64 0 0 0 0-2.319L5.634 2.239a1.64 1.64 0 0 0-2.317 0l-.689.688a4.917 4.917 0 0 0-.67 6.119l.006.01a44.37 44.37 0 0 0 11.921 11.92v0Z"/>
                     </svg>
-                    <p class="text-neutral-100">(414) 687 - 5892</p>
+                    <p class="text-neutral-100 text-xl">(414) 687 - 5892</p>
                 </div>
                 <div class="flex space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="23" fill="none" viewBox="0 0 19 23">
                         <path stroke="#7A0A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.679" d="M17.415 10.082c0 6.452-6.609 10.428-7.982 11.185a.515.515 0 0 1-.497 0C7.562 20.51.955 16.534.955 10.082c0-5.144 3.086-8.745 8.23-8.745s8.23 3.6 8.23 8.745Z"/>
                         <path stroke="#7A0A28" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.679" d="M5.07 9.568a4.115 4.115 0 1 0 8.23 0 4.115 4.115 0 0 0-8.23 0v0Z"/>
                     </svg>  
-                    <p class="text-neutral-100">794 Mcallister St
+                    <p class="text-neutral-100 text-xl">794 Mcallister St
                         San Francisco, 94102</p>
                 </div>
             </div>
         </div>
         <hr>
         <div class="flex justify-between item-center mb-4 w-full">
-            <p class="text-neutral-100 text-lg">
+            <p class="text-neutral-100 text-xl">
                 Copyright © 2025
             </p>
-            <p class="text-neutral-100 text-lg">
+            <p class="text-neutral-100 text-xl">
                 All Rights Reserved | Terms and Conditions | Privacy Policy
             </p>
         </div>
