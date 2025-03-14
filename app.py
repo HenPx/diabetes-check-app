@@ -27,11 +27,6 @@ gender_mapping = {
 def home():
     return render_template('home.html')
 
-@app.route('/coba')
-def coba():
-    return render_template('pages/dumb.html')
-
-
 @app.route('/predict-form')
 def predictForm():
     return render_template('pages/form-diabetes.html')
