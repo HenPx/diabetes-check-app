@@ -49,12 +49,12 @@ def predictScore():
             gender, age, hypertension, heart_disease, smoking_history,
             bmi, HbA1c_level, blood_glucose_level
         ]])
-        
         # Prediksi model
         prediction = model.predict(input_data)
+        probability = model.predict_proba(input_data)[0][1] * 100
         # accuracy = accuracy_score(prediction)
         result = "Diabetes Detected" if prediction[0] == 1 else "No Diabetes"
-        score = 35
+        score = probability
         return render_template('pages/predict-diabetes.html', result=result, score=score)
     except Exception as e:
         return f"Error: {str(e)}"
