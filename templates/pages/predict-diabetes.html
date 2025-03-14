@@ -1,14 +1,14 @@
 {% extends 'layouts/app.html' %}
 
 {% block content %}
-<div class="flex flex-col items-center space-y-8 mt-20">
-    <div class="bg-[#FFFCED]/50 shadow-[0_1px_10px_rgba(0,0,0,0.15)] rounded-xl flex flex-col items-center justify-center space-y-6 py-6 px-4 w-[30%] text-center">
+<div class="flex flex-col items-center space-y-8 mt-10 3xl:mt-20">
+    <div class="bg-[#FFFCED]/50 shadow-[0_1px_10px_rgba(0,0,0,0.15)] rounded-xl flex flex-col items-center justify-center space-y-6 py-6 px-4 3xl:w-[30%] w-[40%] text-center">
 
         <h2 class="font-semibold mb-4 text-2xl">Your test result</h2>
         <p class="text-4xl font-bold uppercase text-primary">{{ result }}</p>
         
         <p class="text-gray-400">confidence score:</p>
-        <div class="relative size-60">
+        <div class="relative size-55 3xl:size-60">
             <svg class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
                 <!-- Background Circle -->
                 <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-[#E4CED4]" stroke-width="4"></circle>
