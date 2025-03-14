@@ -2,39 +2,44 @@
 
 {% block content %}
 
-<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[80%] mt-8 relative">
-    <h2 class="text-3xl font-bold justify-center mt-4">Please fill in the true information!</h2>
+<div class="flex flex-col items-center p-6 bg-[#FFFCED]/50 rounded-xl shadow-[0_1px_10px_rgba(0,0,0,0.15)] min-h-[90%] md:min-h-[80%] mt-8 relative">
+    <h2 class="text-2xl md:text-3xl font-bold justify-center mt-4 text-center">Please fill in the true information!</h2>
     <p class="text-primary" id="step-now">Step 1 of 3</p>
-    <form action="{{ url_for('predictScore') }}" method="post" class="w-[80%] mt-8">
+    <form action="{{ url_for('predictScore') }}" method="post" class="w-full lg:w-[80%] mt-8">
         <!-- STEP 1 -->
         <div class="step" id="step-1">
-            <div class="space-y-8 px-4 ">
-                <label class="text-primary flex justify-between items-center">
+            <div class="space-y-8 lg:px-6 2xl:px-40">
+                <label class="text-primary flex justify-between items-center space-x-5">
                     <span class="font-bold text-xl">
                         AGE:
                     </span>
-                    <input type="number" step="1" name="age" class="p-3 text-xl pl-4 rounded-xl w-[87%] bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your age" required>
+                    <input type="number" step="1" name="age" class="p-3 text-xl pl-4 rounded-xl w-[100%] bg-white shadow-[0_5px_3px_rgba(0,0,0,0.08)] focus:outline-primary placeholder:text-gray-300 placeholder:italic" placeholder="Input your age" required>
                 </label>
             
-                <div class="flex justify-between ">
-                    <div class="text-primary mb-2 font-bold mr-8 text-xl">SEX</div>
+                <div class="flex flex-col lg:flex-row justify-between lg:justify-start">
+                    <div class="text-primary mb-2 font-bold mr-4 lg:mr-8 text-xl">SEX</div>
                     <!-- Male -->
-                    <label class="cursor-pointer  rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
-                        <input id="male" type="radio" name="gender" value="Male" class="hidden" required />
-                        <img src="{{ url_for('static', filename='images/male.png') }}" alt="Male" />
-                        <p class="font-bold text-xl">MALE</p>
-                    </label>
-                    <!-- Female -->
-                    <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
-                        <input id="female" type="radio" name="gender" value="Female" class="hidden" required />
-                        <img src="{{ url_for('static', filename='images/female.png') }}" alt="Female" />
-                        <p class="font-bold text-xl">FEMALE</p>
-                    </label>
-                    <!-- Other -->
-                    <label class="cursor-pointer rounded-xl p-3 w-80 h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
-                        <input id="other" type="radio" name="gender" value="Other" class="hidden" required />
-                        <p class="font-bold text-xl">OTHER</p>
-                    </label>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-8 place-items-start">
+
+                        <label class="cursor-pointer  rounded-xl p-3 w-fit h-fit md:w-52 md:h-52 lg:w-60 lg:h-60 2xl:w-80 2xl:h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                            <input id="male" type="radio" name="gender" value="Male" class="hidden" required />
+                            <img src="{{ url_for('static', filename='images/male.png') }}" alt="Male" />
+                            <p class="font-bold text-xl">MALE</p>
+                        </label>
+                        <!-- Female -->
+                        <label class="cursor-pointer rounded-xl p-3 w-fit h-fit md:w-52 md:h-52 lg:w-60 lg:h-60 2xl:w-80 2xl:h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                            <input id="female" type="radio" name="gender" value="Female" class="hidden" required />
+                            <img src="{{ url_for('static', filename='images/female.png') }}" alt="Female" />
+                            <p class="font-bold text-xl">FEMALE</p>
+                        </label>
+                        <!-- Other -->
+                        <label class="cursor-pointer rounded-xl p-3 w-fit h-fit md:w-52 md:h-52 lg:w-60 lg:h-60 2xl:w-80 2xl:h-80 flex flex-col items-center justify-center bg-white shadow-lg has-checked:bg-primary has-checked:text-white">
+                            <input id="other" type="radio" name="gender" value="Other" class="hidden" required />
+                            <img src="{{ url_for('static', filename='images/othergender.png') }}" alt="othergender" />
+                            <p class="font-bold text-xl">OTHER</p>
+                        </label>
+                    </div>
                     
                 </div>
             </div>
